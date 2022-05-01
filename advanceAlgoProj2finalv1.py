@@ -16,7 +16,7 @@ class Item:
             keys.append(i)
         return keys
 
-# Class ItemCollection having all the Hash Tables and the member functions for all thr networks
+# Class ItemCollection having all the Hash Tables and the member functions for all the networks
 class ItemCollection():
     # Initialize all the 24 hash tables for the four networks
     def __init__(self) -> None:
