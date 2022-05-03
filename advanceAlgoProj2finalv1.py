@@ -16,7 +16,7 @@ class Item:
             keys.append(i)
         return keys
 
-# Class ItemCollection having all the Hash Tables and the member functions for all thr networks
+# Class ItemCollection having all the Hash Tables and the member functions for all the networks
 class ItemCollection():
     # Initialize all the 24 hash tables for the four networks
     def __init__(self) -> None:
@@ -119,17 +119,6 @@ class ItemCollection():
         self.HashTable64[k6].append(i.item)     # Insert the item (key, value) in its correct position in the HashTable64 for Network 4
     
 
-    # Method displayHash() to display the HashTables   
-    def displayHash(self,HashTable):
-        for i in range(len(HashTable)):
-            print(i, end = " ")
-        
-            for j in HashTable[i]:
-                print("-->", end = " ")
-                print(j, end = " ")
-                
-            print()
-
     # Method removeItem() to remove items from the six Hash Tables of Network 3
     def removeItem(self, remlist):
         self.readText4("in2.txt")
@@ -225,147 +214,78 @@ class ItemCollection():
 
     # bestHashing() method to calculate the best Hashing Table among the six HashTables and
     # return the digit based on which outputs the Hash Table with uniform load distribution.
-    def bestHashing1(self):     # Calculates bestHashing for Network 1
+    def bestHashing(self, network):     
         dict = {}
         j=1
-        for table in [self.HashTable11,self.HashTable21,self.HashTable31,self.HashTable41,self.HashTable51,self.HashTable61]:
-            maxcount = 0
-            mincount = sys.maxsize
-            for i in table:
-                count = len(i)
-                if count < mincount:
-                    mincount = count
+        if(network == 1):       # Calculates bestHashing for Network 1
+            for table in [self.HashTable11,self.HashTable21,self.HashTable31,self.HashTable41,self.HashTable51,self.HashTable61]:
+                maxcount = 0
+                mincount = sys.maxsize
+                for i in table:
+                    count = len(i)
+                    if count < mincount:
+                        mincount = count
+                    
+                    if count > maxcount:
+                        maxcount = count
                 
-                if count > maxcount:
-                    maxcount = count
-            
-                diff = maxcount - mincount
-            dict[j] = diff 
-            j= j+1
-        # print(dict)
-        key = min(dict, key = dict.get)
+                    diff = maxcount - mincount
+                dict[j] = diff 
+                j= j+1
+            key = min(dict, key = dict.get)
+
+        elif(network == 2):         # Calculates bestHashing for Network 2
+            for table in [self.HashTable12,self.HashTable22,self.HashTable32,self.HashTable42,self.HashTable52,self.HashTable62]:
+                maxcount = 0
+                mincount = sys.maxsize
+                for i in table:
+                    count = len(i)
+                    if count < mincount:
+                        mincount = count
+                    
+                    if count > maxcount:
+                        maxcount = count
+                
+                    diff = maxcount - mincount
+                dict[j] = diff 
+                j= j+1
+            key = min(dict, key = dict.get)
+        elif(network==3):           # Calculates bestHashing for Network 3
+            for table in [self.HashTable13,self.HashTable23,self.HashTable33,self.HashTable43,self.HashTable53,self.HashTable63]:
+                maxcount = 0
+                mincount = sys.maxsize
+                for i in table:
+                    count = len(i)
+                    if count < mincount:
+                        mincount = count
+                    
+                    if count > maxcount:
+                        maxcount = count
+                
+                    diff = maxcount - mincount
+                dict[j] = diff 
+                j= j+1
+            key = min(dict, key = dict.get)
+
+        elif(network==4):           # Calculates bestHashing for Network 4
+            for table in [self.HashTable14,self.HashTable24,self.HashTable34,self.HashTable44,self.HashTable54,self.HashTable64]:
+                maxcount = 0
+                mincount = sys.maxsize
+                for i in table:
+                    count = len(i)
+                    if count < mincount:
+                        mincount = count
+                    
+                    if count > maxcount:
+                        maxcount = count
+                
+                    diff = maxcount - mincount
+                dict[j] = diff 
+                j= j+1
+            key = min(dict, key = dict.get)
         return key
 
-    def bestHashing2(self):     # Calculates bestHashing for Network 2
-        dict = {}
-        j=1
-        for table in [self.HashTable12,self.HashTable22,self.HashTable32,self.HashTable42,self.HashTable52,self.HashTable62]:
-            maxcount = 0
-            mincount = sys.maxsize
-            for i in table:
-                count = len(i)
-                if count < mincount:
-                    mincount = count
-                
-                if count > maxcount:
-                    maxcount = count
-            
-                diff = maxcount - mincount
-            dict[j] = diff 
-            j= j+1
-        # print(dict)
-        key = min(dict, key = dict.get)
-        return key
-
-    def bestHashing3(self):     # Calculates bestHashing for Network 3
-        dict = {}
-        j=1
-        for table in [self.HashTable13,self.HashTable23,self.HashTable33,self.HashTable43,self.HashTable53,self.HashTable63]:
-            maxcount = 0
-            mincount = sys.maxsize
-            for i in table:
-                count = len(i)
-                if count < mincount:
-                    mincount = count
-                
-                if count > maxcount:
-                    maxcount = count
-            
-                diff = maxcount - mincount
-            dict[j] = diff 
-            j= j+1
-        # print(dict)
-        key = min(dict, key = dict.get)
-        return key
-
-    def bestHashing4(self):     # Calculates bestHashing for Network 4
-        dict = {}
-        j=1
-        for table in [self.HashTable14,self.HashTable24,self.HashTable34,self.HashTable44,self.HashTable54,self.HashTable64]:
-            maxcount = 0
-            mincount = sys.maxsize
-            for i in table:
-                count = len(i)
-                if count < mincount:
-                    mincount = count
-                
-                if count > maxcount:
-                    maxcount = count
-            
-                diff = maxcount - mincount
-            dict[j] = diff 
-            j= j+1
-        # print(dict)
-        key = min(dict, key = dict.get)
-        return key
-
-    # printHash() method calls the displayHash() method to print the six HashTables
-    def printHash1(self):           # Display Network 1
-        print("HashTable11")
-        self.displayHash(self.HashTable11)
-        print("HashTable21")
-        self.displayHash(self.HashTable21)
-        print("HashTable31")
-        self.displayHash(self.HashTable31)
-        print("HashTable41")
-        self.displayHash(self.HashTable41)
-        print("HashTable51")
-        self.displayHash(self.HashTable51)
-        print("HashTable61")
-        self.displayHash(self.HashTable61)
-
-    def printHash2(self):           # Display Network 2
-        print("HashTable12")
-        self.displayHash(self.HashTable12)
-        print("HashTable22")
-        self.displayHash(self.HashTable22)
-        print("HashTable32")
-        self.displayHash(self.HashTable32)
-        print("HashTable42")
-        self.displayHash(self.HashTable42)
-        print("HashTable52")
-        self.displayHash(self.HashTable52)
-        print("HashTable62")
-        self.displayHash(self.HashTable62)
-
-    def printHash3(self):           # Display Network 3
-        print("HashTable13")
-        self.displayHash(self.HashTable13)
-        print("HashTable23")
-        self.displayHash(self.HashTable23)
-        print("HashTable33")
-        self.displayHash(self.HashTable33)
-        print("HashTable43")
-        self.displayHash(self.HashTable43)
-        print("HashTable53")
-        self.displayHash(self.HashTable53)
-        print("HashTable63")
-        self.displayHash(self.HashTable63)
-
-    def printHash4(self):           # Display Network 4
-        print("HashTable14")
-        self.displayHash(self.HashTable14)
-        print("HashTable24")
-        self.displayHash(self.HashTable24)
-        print("HashTable34")
-        self.displayHash(self.HashTable34)
-        print("HashTable44")
-        self.displayHash(self.HashTable44)
-        print("HashTable54")
-        self.displayHash(self.HashTable54)
-        print("HashTable64")
-        self.displayHash(self.HashTable64)
-    
+       
     # readText() method that takes file name as the input and calls the respective addItem()
     # methods for every item in the file and adds them to the six HasTables. It calls addItem2()
     # to add items to Network 2 and addItem3() to add items to Network 3.
@@ -459,7 +379,7 @@ if __name__ == '__main__':
     for item in itemsadd:
         item1.addItem1(item)                                                    # Call the addItem1() to add the items individually to the network
     print(f'Size is {len(itemsadd)} after adding {" and ".join(itemsadd)}')     # Print the size
-    besthash1 = item1.bestHashing1()                                            # Call the bestHashing1() method for Network 2
+    besthash1 = item1.bestHashing(1)                                            # Call the bestHashing1() method for Network 2
     print(f'BestHashing() for Network 1 {itemsadd} returns {besthash1}')        # Print the best hashed table among the six tables for Network1
     print()
     
@@ -467,14 +387,14 @@ if __name__ == '__main__':
     print('Network 2') 
     flname = item2.readText("in1.txt")                                  # Call the readText function to read the sensors in file "in1.txt" and form Network 2
     # item2.printHash2()
-    besthash2 = item2.bestHashing2()                                    # Call the bestHashing2() method for Network 2
+    besthash2 = item2.bestHashing(2)                                    # Call the bestHashing2() method for Network 2
     print(f'BestHashing() for {flname[0]} returns {besthash2}')        # Print the best hashed table among the six tables for Network 2
     print()
 
     print('Network 3')
     flname = item3.readText("in2.txt")                                  # Call the readText function to read the sensors in file "in2.txt" and form Network 3
     # item3.printHash3()
-    besthash3 = item3.bestHashing3()                                    # Call the bestHashing3() method for Network 2 and 
+    besthash3 = item3.bestHashing(3)                                    # Call the bestHashing3() method for Network 2 and 
     print(f'BestHashing() for {flname[0]} returns {besthash3}')        # Print the best hashed table among the six tables for Network 3
     print()
 
@@ -486,6 +406,6 @@ if __name__ == '__main__':
         itemsremove.append(item)
     item4.removeItem(itemsremove)                                                                   # Call the removeItem() and remove the items passed in the argument
     # item4.printHash4()
-    besthash4 = item4.bestHashing4()                                                                # Call the bestHashing4() method for Network 4
+    besthash4 = item4.bestHashing(4)                                                                # Call the bestHashing4() method for Network 4
     print(f'BestHashing() after removing {" and ".join(itemsremove)} returns {besthash4}')          # Print the best hashed table among the six tables for Network 4  
     print()
