@@ -16,4 +16,5 @@ This  project is about reading a fairly small number of distinct Network Interfa
 
 For example 1:
 
-![image](https://user-images.githubusercontent.com/9604309/166574810-b169a946-0361-4ad9-ad99-b805420a3189.png)
+![image](https://user-images.githubusercontent.com/9604309/166585785-19253df8-dab4-4f81-95b6-701a17049a7e.png)
+
