@@ -15,4 +15,5 @@ This  project is about reading a fairly small number of distinct Network Interfa
 <b>Essentially, the objective is to find an algorithm to functions like a Bucket Sort, such that when inputs are evenly distributed, any non-insertion operations have an average O(n) time class.</b>
 
 For example 1:
+
 ![image](https://user-images.githubusercontent.com/9604309/166574810-b169a946-0361-4ad9-ad99-b805420a3189.png)
