@@ -17,7 +17,7 @@ class Item:
         return keys
 
 # Class ItemCollection having all the Hash Tables and the member functions for all the networks
-class ItemCollection():
+class ItemCollection:
     # Initialize all the 24 hash tables for the four networks
     def __init__(self) -> None:
         self.HashTable11 = [[] for _ in range(16)]
@@ -121,7 +121,7 @@ class ItemCollection():
 
     # Method removeItem() to remove items from the six Hash Tables of Network 3
     def removeItem(self, remlist):
-        self.readText4("in2.txt")
+        self.readText("in2.txt")
         # self.printHash4()
         print("New network then read in2.txt")
 
@@ -288,7 +288,7 @@ class ItemCollection():
        
     # readText() method that takes file name as the input and calls the respective addItem()
     # methods for every item in the file and adds them to the six HasTables. It calls addItem2()
-    # to add items to Network 2 and addItem3() to add items to Network 3.
+    # to add items to Network 2 and addItem3() to add items to Network 3, and addItem4() to add items to Network 4.
     def readText(self, flname):
         list = []
         if(flname == "in1.txt"):
@@ -323,23 +323,8 @@ class ItemCollection():
             size = 0
             size = size + len(list)
             print(f'New network. Size is {size} after reading {flname}.')
-        return flname,size
-
-    def readText4(self,flname):
-        list = []
-        fl = open(flname, "r")
-        print(f'Successfully opened file {flname}')
-        datainput = fl.read()
-        datainput = datainput.split('\n')
-        # print(datainput)
-        fl.close()
-        for val in datainput:
-            list.append(val)
-        # print(list)
-        for l in list:
-            self.addItem4(l)
-        size = 0
-        size = size + len(list)
+            for l in list:
+                self.addItem4(l)
         return flname,size
 
 
