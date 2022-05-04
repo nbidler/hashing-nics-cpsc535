@@ -25,6 +25,17 @@ Shown in the screenshots below, the example calls a function that returns the de
 
 ![image](https://user-images.githubusercontent.com/9604309/166596241-b55ed4d6-c5e8-4187-bfe0-45b205b06189.png)
 
+Example 2: demonstrating that the program evaluation to find the most even distribution is the same as the sample cases
 After this, the program allows the user to manually enter a network: the number of NICs to be entered, followed by the 6-digit NICs.
 
 ![image](https://user-images.githubusercontent.com/9604309/166613442-7ccff116-a72c-4923-b396-e96e05e3d4f0.png)
+
+This creates a "network" and runs the BestHashing<network number> function, which finds the smallest and largest entry on each hash table, takes the difference of each, and returns the hash table with the smallest difference.
+  
+![image](https://user-images.githubusercontent.com/9604309/166616146-2c99049c-a6ef-416c-8001-3cf210ea99c8.png)
+
+![image](https://user-images.githubusercontent.com/9604309/166616163-ea2b71f9-a322-43aa-a6db-6a27736d82b1.png)
+
+Example 3: showing the network can be interacted with in a way that changes the Best Hashing calculation
+  
+![image](https://user-images.githubusercontent.com/9604309/166616450-8b4a1d8a-744e-4669-bbe4-35dcbf9a3c40.png)
