@@ -12,7 +12,7 @@ We are given a sensor network with a fairly small number of MAC addresses, one f
 
 This  project is about reading a fairly small number of distinct Network Interface Controllers (NICs), each being a 6-digit number in hexadecimal, and deciding which digit among the six gives the best balanced distribution of the NICs.
 
-<b>Essentially, the objective is to find an algorithm to functions like a Bucket Sort, such that when inputs are evenly distributed, any non-insertion operations have an average O(n) time class.</b>
+<b>Essentially, the objective is to find an algorithm that functions similarly to a Bucket Sort, such that when inputs are evenly distributed in a hash table with chaining, any non-insertion operations have an average O(n) time class.</b>
 
 Also, please note that the naming conventions for the different hash tables is "HashTable<digit><network number>" - so the hash table based on the second digits of the third network would be "HashTable23"
 
