@@ -19,9 +19,12 @@ Also, please note that the naming conventions for the different hash tables is "
 The first thing the program does is to initilize one ItemCollection object for each network: each ItemCollection will hold all the HashTables and member functions for its assigned network.
 
 Example 1: demonstrating that the program output for hashed inputs and outputs is the same as the sample outputs
-Shown in the screenshots below, the example
+Shown in the screenshots below, the example calls a function that returns the decimal digit at the appropriate location, i.e. hashfct4() returns the decimal value of the hex digit at position 4
 
 ![image](https://user-images.githubusercontent.com/9604309/166585785-19253df8-dab4-4f81-95b6-701a17049a7e.png)
 
 ![image](https://user-images.githubusercontent.com/9604309/166596241-b55ed4d6-c5e8-4187-bfe0-45b205b06189.png)
 
+After this, the program allows the user to manually enter a network: the number of NICs to be entered, followed by the 6-digit NICs.
+
+![image](https://user-images.githubusercontent.com/9604309/166613442-7ccff116-a72c-4923-b396-e96e05e3d4f0.png)
