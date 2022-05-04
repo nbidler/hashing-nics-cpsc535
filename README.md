@@ -39,23 +39,24 @@ This creates a "network" and runs the BestHashing<network number> function, whic
 Example 3: showing the network can be interacted with in a way that changes the Best Hashing calculation
   
 ![image](https://user-images.githubusercontent.com/9604309/166616450-8b4a1d8a-744e-4669-bbe4-35dcbf9a3c40.png)
-
+```
 Before deletion (result of 2): 
-123456  234567  345678  456789  56789A  6789AB  789ABC
-89ABCD  9ABCDE  ABCDEF  BCDEF0  CDEF01  DEF012  EF0123
-F01234  543210  43210F  3210FE  210FED  10FEDC  FEDCBA
-EDCBA9  DCBA98  CBA987  BA9876  A98765  987654  876543
-765432  654321  776543  887654  998765  110987  221098
-332109  443210
-  
+|123456 | 234567 | 345678 | 456789 | 56789A | 6789AB | 789ABC
+|89ABCD | 9ABCDE | ABCDEF | BCDEF0 | CDEF01 | DEF012 | EF0123
+|F01234 | 543210 | 43210F | 3210FE | 210FED | 10FEDC | FEDCBA
+|EDCBA9 | DCBA98 | CBA987 | BA9876 | A98765 | 987654 | 876543
+|765432 | 654321 | 776543 | 887654 | 998765 | 110987 | 221098
+|332109 | 443210
+```
+```
 After deletion:
-123456  234567  345678  456789  56789A  6789AB  789ABC
-89ABCD  9ABCDE  ABCDEF  BCDEF0  CDEF01  DEF012  EF0123
-F01234  543210  43210F  3210FE          10FEDC  FEDCBA
-EDCBA9  DCBA98  CBA987  BA9876  A98765  987654  876543
-765432  654321  776543  887654  998765          221098
-332109  443210
-  
+|123456 | 234567 | 345678 | 456789 | 56789A | 6789AB | 789ABC
+|89ABCD | 9ABCDE | ABCDEF | BCDEF0 | CDEF01 | DEF012 | EF0123
+|F01234 | 543210 | 43210F | 3210FE |        | 10FEDC | FEDCBA
+|EDCBA9 | DCBA98 | CBA987 | BA9876 | A98765 | 987654 | 876543
+|765432 | 654321 | 776543 | 887654 | 998765 |        | 221098
+|332109 | 443210
+```
 digit count at positions:
 
 | Count of: | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
@@ -66,3 +67,5 @@ digit count at positions:
 | Pos. 4    | 2 | 3 | 3 | 1 | 2 | 3 | 3 | 3 | 2 | 2 | 2 | 2 | 2 | 1 | 2 | 1 |
 | Pos. 5    | 3 | 3 | 2 | 2 | 1 | 3 | 3 | 2 | 2 | 3 | 2 | 2 | 1 | 2 | 1 | 2 |
 | Pos. 6    | 2 | 2 | 2 | 2 | 3 | 2 | 2 | 2 | 3 | 3 | 2 | 1 | 2 | 1 | 2 | 2 |
+
+As shown by the above table, position 1 and 2 have a maximum difference of 3, while 3 through 6 have a difference of 2 - as tie-breaker, the first position encountered is the one that is used for the hash table. In this case, the result is position 3, which matches the program's output.
