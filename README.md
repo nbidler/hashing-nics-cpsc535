@@ -19,7 +19,7 @@ Also, please note that the naming conventions for the different hash tables is "
 The first thing the program does is to initialize one ItemCollection object for each network: each ItemCollection will hold all the HashTables and member functions for its assigned network.
 
 Example 1: demonstrating that the program output for hashed inputs and outputs is the same as the sample outputs
-Shown in the screenshots below, the example calls a function that returns the decimal digit at the appropriate location, i.e. hashfct4() returns the decimal value of the hex digit at position 4
+Shown in the screenshots below, the example calls a function that returns the decimal value of the hex digit at the appropriate location, i.e., hashfct4() returns the decimal value of the hex digit at position 4.
 
 ![image](https://user-images.githubusercontent.com/9604309/166585785-19253df8-dab4-4f81-95b6-701a17049a7e.png)
 
