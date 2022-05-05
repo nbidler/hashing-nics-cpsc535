@@ -16,7 +16,7 @@ This  project is about reading a fairly small number of distinct Network Interfa
 
 Also, please note that the naming conventions for the different hash tables is "HashTable(digit)(network number)" - so the hash table based on the second digits of the third network would be "HashTable23"
 
-The first thing the program does is to initilize one ItemCollection object for each network: each ItemCollection will hold all the HashTables and member functions for its assigned network.
+The first thing the program does is to initialize one ItemCollection object for each network: each ItemCollection will hold all the HashTables and member functions for its assigned network.
 
 Example 1: demonstrating that the program output for hashed inputs and outputs is the same as the sample outputs
 Shown in the screenshots below, the example calls a function that returns the decimal digit at the appropriate location, i.e. hashfct4() returns the decimal value of the hex digit at position 4
