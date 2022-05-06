@@ -273,7 +273,6 @@ if __name__ == '__main__':
     
 
     print('Network 2')
-    print("After clearing Network 1")
     flname = item2.readText("in1.txt")                                 # Call the readText function to read the sensors in file "in1.txt" and form Network 2
     besthash2 = item2.bestHashing()                                    # Call the bestHashing() method for Network 2
     print(f'BestHashing() for {flname[0]} returns {besthash2}')        # Print the best hashed table among the six tables for Network 2
